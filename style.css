@@ -16,12 +16,13 @@ box-sizing:border-box;
 }
 
 
-
 body{
 
 margin:0;
 
 background:#101010;
+
+overflow-x:hidden;
 
 }
 
@@ -39,7 +40,12 @@ margin:auto;
 
 overflow:hidden;
 
-background:#101010;
+
+background:
+radial-gradient(circle at 50% 50%,
+rgba(255,120,40,.18),
+transparent 25%),
+#101010;
 
 }
 
@@ -69,7 +75,6 @@ aspect-ratio:1280/562;
 
 
 
-
 .side-frame{
 
 position:absolute;
@@ -84,8 +89,27 @@ height:100%;
 
 
 
+/* SCREEN 1 */
 
-/* ЭКРАН 1 */
+
+.ellipse{
+
+position:absolute;
+
+width:420px;
+
+height:180px;
+
+left:-100px;
+
+top:170px;
+
+border:1px solid rgba(255,255,255,.25);
+
+border-radius:50%;
+
+}
+
 
 
 .menu{
@@ -198,6 +222,8 @@ left:25%;
 
 top:40%;
 
+animation:glassesFloat 6s infinite ease-in-out;
+
 }
 
 
@@ -212,6 +238,8 @@ left:53%;
 
 top:48%;
 
+animation:bookFloat 7s infinite ease-in-out;
+
 }
 
 
@@ -222,7 +250,7 @@ position:absolute;
 
 width:30%;
 
-left:-2%;
+left:-3%;
 
 bottom:-5%;
 
@@ -260,8 +288,33 @@ top:45%;
 
 
 
+@keyframes glassesFloat{
 
-/* ЭКРАН 2 */
+50%{
+
+transform:translate(10px,-15px) rotate(2deg);
+
+}
+
+}
+
+
+
+@keyframes bookFloat{
+
+50%{
+
+transform:translate(-10px,-12px) rotate(-2deg);
+
+}
+
+}
+
+
+
+
+
+/* SCREEN 2 */
 
 
 .gallery{
@@ -284,6 +337,8 @@ top:30%;
 
 width:50%;
 
+transition:.5s;
+
 }
 
 
@@ -292,13 +347,11 @@ width:50%;
 
 position:absolute;
 
-width:35%;
+width:18%;
 
-left:32%;
+left:41%;
 
 top:8%;
-
-z-index:3;
 
 }
 
@@ -314,7 +367,9 @@ left:43%;
 
 top:35%;
 
-z-index:4;
+cursor:pointer;
+
+z-index:5;
 
 }
 
@@ -322,9 +377,7 @@ z-index:4;
 
 
 
-
-
-/* ЭКРАН 3 */
+/* SCREEN 3 */
 
 
 .cards{
@@ -354,9 +407,8 @@ transition:.5s;
 }
 
 
-
 .cards img:hover{
 
-transform:scale(1.1) translateY(-15px);
+transform:scale(1.1);
 
 }
