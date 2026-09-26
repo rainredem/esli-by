@@ -1,361 +1,154 @@
-@font-face {
-    font-family: "Bergamasco";
-    src: url("assets/fonts/Bergamasco Regular.ttf");
-}
+<!DOCTYPE html>
+<html lang="ru">
 
-@font-face {
-    font-family: "Montserrat";
-    src: url("assets/fonts/Montserrat-Regular.ttf");
-}
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-* {
-    box-sizing: border-box;
-}
+<title>Если бы</title>
 
+<link rel="stylesheet" href="style.css">
 
-body {
-    margin: 0;
-    background: #101010;
-    overflow-x: hidden;
-}
+</head>
 
 
-/* главный экран */
+<body>
 
-.screen {
 
-    width: 100%;
-    max-width: 1280px;
+<!-- ЭКРАН 1 -->
 
-    aspect-ratio: 1280 / 800;
+<section class="screen screen-1">
 
-    position: relative;
 
-    margin: auto;
+<img class="side-frame" src="assets/side-frame.svg">
 
-    overflow: hidden;
 
-    background:
-    radial-gradient(circle at 35% 35%,
-    rgba(255,120,40,.45),
-    transparent 18%),
+<div class="menu">
+<span>О ПРОЕКТЕ</span>
+<span>✦</span>
+<span>АРХИВ</span>
+<span>✦</span>
+<span>КОНТАКТЫ</span>
+</div>
 
-    radial-gradient(circle at 70% 75%,
-    rgba(255,170,50,.25),
-    transparent 20%),
 
-    #101010;
 
-}
+<div class="title">
 
+<h1>ЕСЛИ БЫ</h1>
 
+<p>
+АРХИВ АЛЬТЕРНАТИВНЫХ ВЗГЛЯДОВ
+</p>
 
-/* рамка */
+</div>
 
-.side-frame {
 
-    position:absolute;
 
-    inset:0;
+<p class="left-text">
+ЧТО МОГЛО<br>
+ПРОИЗОЙТИ,<br>
+ТОЖЕ ИМЕЕТ<br>
+ЗНАЧЕНИЕ
+</p>
 
-    width:100%;
 
-    height:100%;
 
-}
+<p class="right-text">
+ГОРОДА<br>
+ПРЕДМЕТЫ<br>
+СОБЫТИЯ<br>
+ЛЮДИ<br>
+ИДЕИ
+</p>
 
 
 
-/* меню */
+<img class="flower big-flower" src="assets/flower.svg">
 
+<img class="glasses" src="assets/glasses.svg">
 
-.menu {
+<img class="book" src="assets/book.svg">
 
-    position:absolute;
+<img class="star yellow" src="assets/yellow-star.svg">
 
-    top:6%;
+<img class="star pink" src="assets/white-star.svg">
 
-    left:7%;
 
+</section>
 
-    display:flex;
 
-    align-items:center;
 
-    gap:35px;
 
 
-    color:white;
 
-    font-family:"Montserrat";
+<!-- ЭКРАН 2 -->
 
-    font-size:13px;
 
-    letter-spacing:1px;
+<section class="screen screen-2">
 
-}
 
+<img class="side-frame" src="assets/side-frame.svg">
 
 
+<img class="photo photo-left" src="assets/photo1.jpg">
 
-/* логотип */
+<img class="photo photo-right" src="assets/photo2.jpg">
 
 
-.title {
+<img class="big-pink-star" src="assets/big-pink-star.svg">
 
-    position:absolute;
 
-    top:14%;
+<img class="pink-flower" src="assets/pink-flower.svg">
 
-    left:50%;
 
-    transform:translateX(-50%);
 
-    text-align:center;
+</section>
 
-    white-space:nowrap;
 
-    color:white;
 
-}
 
 
 
-.title h1 {
 
-    font-family:"Bergamasco";
 
-    font-weight:400;
+<!-- ЭКРАН 3 -->
 
-    font-size:clamp(55px,6vw,78px);
 
-    margin:0;
+<section class="screen screen-3">
 
-    line-height:1;
 
-}
+<img class="side-frame" src="assets/side-frame.svg">
 
 
+<div class="cards">
 
-.title p {
 
-    font-family:"Montserrat";
+<img src="assets/1.svg">
+<img src="assets/2.svg">
+<img src="assets/3.svg">
 
-    font-size:18px;
+<img src="assets/4.svg">
+<img src="assets/5.svg">
+<img src="assets/6.svg">
 
-    letter-spacing:2px;
+<img src="assets/7.svg">
+<img src="assets/8.svg">
+<img src="assets/9.svg">
 
-    margin-top:5px;
 
-}
+</div>
 
 
+</section>
 
-/* боковые подписи */
 
 
-.left-text,
-.right-text {
 
-    position:absolute;
+<script src="script.js"></script>
 
-    top:17%;
 
+</body>
 
-    color:white;
-
-    font-family:"Montserrat";
-
-    font-size:13px;
-
-    letter-spacing:1px;
-
-    line-height:1.35;
-
-}
-
-
-.left-text {
-
-    left:7%;
-
-}
-
-
-
-.right-text {
-
-    right:7%;
-
-}
-
-
-
-
-
-/* элементы */
-
-
-.glasses {
-
-    position:absolute;
-
-    width:34%;
-
-    left:25%;
-
-    top:39%;
-
-
-    animation:float 5s ease-in-out infinite;
-
-}
-
-
-
-.book {
-
-    position:absolute;
-
-    width:34%;
-
-    left:53%;
-
-    top:47%;
-
-
-    animation:bookMove 6s ease-in-out infinite;
-
-}
-
-
-
-.big-flower {
-
-    position:absolute;
-
-    width:32%;
-
-    left:-2%;
-
-    bottom:-8%;
-
-}
-
-
-
-.star {
-
-    position:absolute;
-
-}
-
-
-
-.yellow {
-
-    width:5%;
-
-    left:43%;
-
-    top:61%;
-
-}
-
-
-
-.pink {
-
-    width:3%;
-
-    left:72%;
-
-    top:44%;
-
-    animation:shine 2s infinite;
-
-}
-
-
-
-
-
-/* анимации */
-
-
-@keyframes float {
-
-    0%,100% {
-
-        transform:translateY(0);
-
-    }
-
-
-    50% {
-
-        transform:translateY(-15px);
-
-    }
-
-}
-
-
-
-@keyframes bookMove {
-
-    0%,100% {
-
-        transform:rotate(0deg);
-
-    }
-
-
-    50% {
-
-        transform:rotate(-3deg) translateY(-10px);
-
-    }
-
-}
-
-
-
-@keyframes shine {
-
-    0%,100% {
-
-        opacity:.5;
-
-        transform:scale(1);
-
-    }
-
-
-    50% {
-
-        opacity:1;
-
-        transform:scale(1.2);
-
-    }
-
-}
-
-
-
-/* адаптация */
-
-
-@media (max-width:700px) {
-
-
-    .screen {
-
-        aspect-ratio:1280 / 800;
-
-    }
-
-
-}
+</html>
