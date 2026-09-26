@@ -1,154 +1,501 @@
-<!DOCTYPE html>
-<html lang="ru">
+@font-face {
+    font-family: "Bergamasco";
+    src: url("assets/fonts/Bergamasco Regular.ttf");
+}
 
-<head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+@font-face {
+    font-family: "Montserrat";
+    src: url("assets/fonts/Montserrat-Regular.ttf");
+}
 
-<title>Если бы</title>
 
-<link rel="stylesheet" href="style.css">
 
-</head>
+* {
+    box-sizing:border-box;
+}
 
 
-<body>
 
+body {
 
-<!-- ЭКРАН 1 -->
+    margin:0;
 
-<section class="screen screen-1">
+    background:#101010;
 
+    overflow-x:hidden;
 
-<img class="side-frame" src="assets/side-frame.svg">
+}
 
 
-<div class="menu">
-<span>О ПРОЕКТЕ</span>
-<span>✦</span>
-<span>АРХИВ</span>
-<span>✦</span>
-<span>КОНТАКТЫ</span>
-</div>
 
+.screen {
 
+    width:100%;
 
-<div class="title">
+    max-width:1280px;
 
-<h1>ЕСЛИ БЫ</h1>
+    position:relative;
 
-<p>
-АРХИВ АЛЬТЕРНАТИВНЫХ ВЗГЛЯДОВ
-</p>
+    margin:auto;
 
-</div>
+    overflow:hidden;
 
 
+    background:
 
-<p class="left-text">
-ЧТО МОГЛО<br>
-ПРОИЗОЙТИ,<br>
-ТОЖЕ ИМЕЕТ<br>
-ЗНАЧЕНИЕ
-</p>
+    radial-gradient(circle at 15% 35%,
+    rgba(255,120,40,.45),
+    transparent 20%),
 
 
+    radial-gradient(circle at 75% 75%,
+    rgba(255,170,50,.25),
+    transparent 20%),
 
-<p class="right-text">
-ГОРОДА<br>
-ПРЕДМЕТЫ<br>
-СОБЫТИЯ<br>
-ЛЮДИ<br>
-ИДЕИ
-</p>
 
+    #101010;
 
+}
 
-<img class="flower big-flower" src="assets/flower.svg">
 
-<img class="glasses" src="assets/glasses.svg">
 
-<img class="book" src="assets/book.svg">
 
-<img class="star yellow" src="assets/yellow-star.svg">
 
-<img class="star pink" src="assets/white-star.svg">
+/* ЭКРАН 1 */
 
 
-</section>
+.screen-1 {
 
+    aspect-ratio:1280 / 800;
 
+}
 
 
 
+.side-frame {
 
-<!-- ЭКРАН 2 -->
+    position:absolute;
 
+    inset:0;
 
-<section class="screen screen-2">
+    width:100%;
 
+    height:100%;
 
-<img class="side-frame" src="assets/side-frame.svg">
+}
 
 
-<img class="photo photo-left" src="assets/photo1.jpg">
 
-<img class="photo photo-right" src="assets/photo2.jpg">
+.menu {
 
+    position:absolute;
 
-<img class="big-pink-star" src="assets/big-pink-star.svg">
+    top:6%;
 
+    left:7%;
 
-<img class="pink-flower" src="assets/pink-flower.svg">
 
+    display:flex;
 
+    gap:30px;
 
-</section>
 
+    color:white;
 
+    font-family:Montserrat;
 
+    font-size:clamp(10px,1vw,13px);
 
+}
 
 
 
+.title {
 
-<!-- ЭКРАН 3 -->
+    position:absolute;
 
+    top:13%;
 
-<section class="screen screen-3">
+    left:50%;
 
+    transform:translateX(-50%);
 
-<img class="side-frame" src="assets/side-frame.svg">
+    text-align:center;
 
+    color:white;
 
-<div class="cards">
+    white-space:nowrap;
 
+}
 
-<img src="assets/1.svg">
-<img src="assets/2.svg">
-<img src="assets/3.svg">
 
-<img src="assets/4.svg">
-<img src="assets/5.svg">
-<img src="assets/6.svg">
 
-<img src="assets/7.svg">
-<img src="assets/8.svg">
-<img src="assets/9.svg">
+.title h1 {
 
+    margin:0;
 
-</div>
+    font-family:Bergamasco;
 
+    font-weight:400;
 
-</section>
+    font-size:clamp(50px,6vw,78px);
 
+}
 
 
 
-<script src="script.js"></script>
+.title p {
 
+    margin-top:5px;
 
-</body>
+    font-family:Montserrat;
 
-</html>
+    font-size:18px;
+
+    letter-spacing:2px;
+
+}
+
+
+
+.left-text,
+.right-text {
+
+
+    position:absolute;
+
+
+    top:17%;
+
+
+    color:white;
+
+
+    font-family:Montserrat;
+
+
+    font-size:13px;
+
+    line-height:1.3;
+
+
+}
+
+
+
+.left-text {
+
+    left:7%;
+
+}
+
+
+
+.right-text {
+
+    right:7%;
+
+}
+
+
+
+.glasses {
+
+    position:absolute;
+
+
+    width:34%;
+
+
+    left:25%;
+
+
+    top:40%;
+
+
+    animation:float 5s infinite ease-in-out;
+
+}
+
+
+
+
+.book {
+
+    position:absolute;
+
+
+    width:34%;
+
+
+    left:53%;
+
+
+    top:48%;
+
+
+    animation:bookMove 6s infinite ease-in-out;
+
+}
+
+
+
+
+.big-flower {
+
+    position:absolute;
+
+
+    width:32%;
+
+
+    left:-3%;
+
+
+    bottom:-8%;
+
+}
+
+
+
+
+.star {
+
+    position:absolute;
+
+}
+
+
+
+.yellow {
+
+    width:5%;
+
+    left:43%;
+
+    top:63%;
+
+}
+
+
+
+.pink {
+
+    width:3%;
+
+    left:72%;
+
+    top:45%;
+
+
+    animation:shine 2s infinite;
+
+}
+
+
+
+
+
+
+
+
+/* ЭКРАН 2 */
+
+
+.screen-2 {
+
+    aspect-ratio:1280 / 682;
+
+}
+
+
+
+.photo {
+
+    position:absolute;
+
+    width:26%;
+
+    top:32%;
+
+}
+
+
+
+.photo-left {
+
+    left:24%;
+
+}
+
+
+
+.photo-right {
+
+    left:50%;
+
+}
+
+
+
+
+.big-pink-star {
+
+    position:absolute;
+
+    width:18%;
+
+    left:42%;
+
+    top:35%;
+
+}
+
+
+
+
+.pink-flower {
+
+    position:absolute;
+
+    width:35%;
+
+    left:32%;
+
+    top:20%;
+
+}
+
+
+
+
+
+
+
+
+/* ЭКРАН 3 */
+
+
+.screen-3 {
+
+    aspect-ratio:1280 / 562;
+
+}
+
+
+
+.cards {
+
+
+    position:absolute;
+
+
+    width:45%;
+
+
+    left:27%;
+
+
+    top:20%;
+
+
+    display:grid;
+
+
+    grid-template-columns:repeat(3,1fr);
+
+
+    gap:0;
+
+}
+
+
+
+.cards img {
+
+
+    width:100%;
+
+
+    transition:.5s;
+
+
+}
+
+
+
+
+.cards img:hover {
+
+
+    transform:translateY(-20px) rotate(5deg) scale(1.1);
+
+
+}
+
+
+
+
+
+
+
+
+/* анимации */
+
+
+@keyframes float {
+
+
+50% {
+
+transform:translateY(-15px);
+
+}
+
+}
+
+
+
+@keyframes bookMove {
+
+
+50% {
+
+transform:rotate(-3deg) translateY(-10px);
+
+}
+
+}
+
+
+
+@keyframes shine {
+
+
+50% {
+
+opacity:1;
+
+transform:scale(1.2);
+
+}
+
+}
+
+
+
+
+
+@media(max-width:700px){
+
+
+.screen {
+
+    width:100%;
+
+}
+
+
+
+}
