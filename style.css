@@ -15,49 +15,37 @@
 
 
 body {
-    margin:0;
-    background:#101010;
-    overflow-x:hidden;
+    margin: 0;
+    background: #101010;
+    overflow-x: hidden;
 }
 
+
+/* главный экран */
 
 .screen {
 
-    width:100%;
-    max-width:1280px;
+    width: 100%;
+    max-width: 1280px;
 
-    aspect-ratio:1280 / 800;
+    aspect-ratio: 1280 / 800;
 
-    position:relative;
+    position: relative;
 
-    margin:auto;
+    margin: auto;
 
-    overflow:hidden;
-
-    background:#101010;
-
-}
-
-
-
-/* общий фон */
-
-.screen::before {
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
+    overflow: hidden;
 
     background:
-    radial-gradient(circle at 10% 35%,
-    rgba(255,120,40,.55),
+    radial-gradient(circle at 35% 35%,
+    rgba(255,120,40,.45),
     transparent 18%),
 
-    radial-gradient(circle at 75% 75%,
-    rgba(255,170,50,.35),
-    transparent 20%);
+    radial-gradient(circle at 70% 75%,
+    rgba(255,170,50,.25),
+    transparent 20%),
+
+    #101010;
 
 }
 
@@ -69,17 +57,18 @@ body {
 
     position:absolute;
 
+    inset:0;
+
     width:100%;
 
     height:100%;
-
-    inset:0;
 
 }
 
 
 
 /* меню */
+
 
 .menu {
 
@@ -92,26 +81,32 @@ body {
 
     display:flex;
 
-    gap:30px;
+    align-items:center;
+
+    gap:35px;
 
 
     color:white;
 
-    font-family:Montserrat;
+    font-family:"Montserrat";
 
-    font-size:clamp(10px,1vw,13px);
+    font-size:13px;
+
+    letter-spacing:1px;
 
 }
 
 
 
-/* заголовок */
+
+/* логотип */
+
 
 .title {
 
     position:absolute;
 
-    top:13%;
+    top:14%;
 
     left:50%;
 
@@ -119,20 +114,25 @@ body {
 
     text-align:center;
 
+    white-space:nowrap;
+
     color:white;
 
 }
 
 
+
 .title h1 {
 
-    font-family:Bergamasco;
+    font-family:"Bergamasco";
 
     font-weight:400;
 
-    font-size:clamp(50px,7vw,90px);
+    font-size:clamp(55px,6vw,78px);
 
     margin:0;
+
+    line-height:1;
 
 }
 
@@ -140,19 +140,19 @@ body {
 
 .title p {
 
-    font-family:Montserrat;
+    font-family:"Montserrat";
 
-    font-size:clamp(12px,1.5vw,20px);
+    font-size:18px;
 
     letter-spacing:2px;
 
-    margin:-5px 0 0;
+    margin-top:5px;
 
 }
 
 
 
-/* боковые тексты */
+/* боковые подписи */
 
 
 .left-text,
@@ -160,34 +160,41 @@ body {
 
     position:absolute;
 
-    top:16%;
+    top:17%;
 
-
-    font-family:Montserrat;
-
-    font-size:clamp(9px,1vw,13px);
 
     color:white;
+
+    font-family:"Montserrat";
+
+    font-size:13px;
+
+    letter-spacing:1px;
+
+    line-height:1.35;
 
 }
 
 
 .left-text {
 
-    left:8%;
+    left:7%;
 
 }
+
 
 
 .right-text {
 
-    right:8%;
+    right:7%;
 
 }
 
 
 
-/* объекты */
+
+
+/* элементы */
 
 
 .glasses {
@@ -198,10 +205,10 @@ body {
 
     left:25%;
 
-    top:43%;
+    top:39%;
 
 
-    animation:float 5s infinite ease-in-out;
+    animation:float 5s ease-in-out infinite;
 
 }
 
@@ -213,12 +220,12 @@ body {
 
     width:34%;
 
-    left:52%;
+    left:53%;
 
-    top:52%;
+    top:47%;
 
 
-    animation:bookMove 6s infinite ease-in-out;
+    animation:bookMove 6s ease-in-out infinite;
 
 }
 
@@ -228,11 +235,11 @@ body {
 
     position:absolute;
 
-    width:40%;
+    width:32%;
 
-    left:-5%;
+    left:-2%;
 
-    bottom:-12%;
+    bottom:-8%;
 
 }
 
@@ -245,15 +252,17 @@ body {
 }
 
 
+
 .yellow {
 
     width:5%;
 
     left:43%;
 
-    top:65%;
+    top:61%;
 
 }
+
 
 
 .pink {
@@ -262,11 +271,13 @@ body {
 
     left:72%;
 
-    top:45%;
+    top:44%;
 
     animation:shine 2s infinite;
 
 }
+
+
 
 
 
@@ -275,34 +286,76 @@ body {
 
 @keyframes float {
 
-50% {
+    0%,100% {
 
-transform:translateY(-15px);
+        transform:translateY(0);
+
+    }
+
+
+    50% {
+
+        transform:translateY(-15px);
+
+    }
 
 }
 
-}
 
 
 @keyframes bookMove {
 
-50% {
+    0%,100% {
 
-transform:rotate(-3deg) translateY(-10px);
+        transform:rotate(0deg);
+
+    }
+
+
+    50% {
+
+        transform:rotate(-3deg) translateY(-10px);
+
+    }
 
 }
 
-}
 
 
 @keyframes shine {
 
-50% {
+    0%,100% {
 
-opacity:1;
+        opacity:.5;
 
-transform:scale(1.2);
+        transform:scale(1);
+
+    }
+
+
+    50% {
+
+        opacity:1;
+
+        transform:scale(1.2);
+
+    }
 
 }
+
+
+
+/* адаптация */
+
+
+@media (max-width:700px) {
+
+
+    .screen {
+
+        aspect-ratio:1280 / 800;
+
+    }
+
 
 }
