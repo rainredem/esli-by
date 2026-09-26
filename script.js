@@ -1,55 +1,20 @@
-// появление элементов при загрузке
-
-window.addEventListener("load", () => {
-
-    const elements = document.querySelectorAll(
-        ".menu, .title, .left-text, .right-text, .glasses, .book, .star, .big-flower"
-    );
-
-
-    elements.forEach((element, index) => {
-
-        element.style.opacity = "0";
-        element.style.transform += " translateY(30px)";
-
-
-        setTimeout(() => {
-
-            element.style.transition = "1s ease";
-
-            element.style.opacity = "1";
-            element.style.transform =
-                element.style.transform.replace(
-                    " translateY(30px)",
-                    ""
-                );
-
-        }, index * 150);
-
-    });
-
-
-});
-
-
-// движение градиента мышкой
-
-const screen = document.querySelector(".screen");
+const screen = document.querySelector(".screen-1");
 
 
 screen.addEventListener("mousemove", (event)=>{
 
-    const x = event.clientX / window.innerWidth * 100;
-    const y = event.clientY / window.innerHeight * 100;
+    const rect = screen.getBoundingClientRect();
+
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
 
 
     screen.style.background =
     `
-    radial-gradient(circle at ${x}% ${y}%,
-    rgba(255,120,40,.55),
+    radial-gradient(circle at ${x}px ${y}px,
+    rgba(255,120,40,.45),
     transparent 18%),
     #101010
     `;
-
 
 });
